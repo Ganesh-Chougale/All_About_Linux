@@ -1,5 +1,7 @@
 The Linux file system follows a hierarchical structure where everything starts from the **root (`/`) directory**. Below is an overview of the key directories and their purposes:
-
+```bash
+cd /
+```  
 ```sh
 /
 ├── bin     → Essential command binaries (e.g., `ls`, `cp`, `mv`)
