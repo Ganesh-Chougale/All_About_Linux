@@ -60,5 +60,3 @@ This will:
 ✅ **Stage all changes**  
 ✅ **Commit with date & time**  
 ✅ **Push to the main branch**  
-
-Would you like to add more features, like pulling before pushing or checking the branch name? 🚀
