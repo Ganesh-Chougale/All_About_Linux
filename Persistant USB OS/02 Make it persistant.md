@@ -4,16 +4,19 @@
 lsblk
 ```  
 it will show usb partitions like this  
-`loop0`, `sda1`, `sda2`... `sda<n>`  
+`loop0`  
+`sda1`, `sda2`...   
+`sdx<n>`  
 mostly only 2 or 3.  
 `loop0` (or similiar) is where os is installed & other partitions are spared ones  
 
 ## 2. create new persistant partition  
 ```bash
-sudo fdisk /dev/sd<>
+sudo fdisk /dev/sdX
 ```  
-here  `<>` replace your spared partition letter (usually letter `a` in most cases)  
+here  `X` replace your sd letter (usually letter `b` in most cases)  
 - it will give warning message that partition is in use & re-partitioning is bad idea.
+`note`: i had ssd & usb. both were 256gb & i choose accidently sd`a` deleting my ssd C drive, so choose last letter carefully. make it sure that it belongs to USB  
 ```bash
 n
 ```  
@@ -55,7 +58,7 @@ now you will one more partition
 
 ## 4. format partition  
 ```bash
-sudo mkfs.ext4 -L persistence /dev/sda<>
+sudo mkfs.ext4 -L persistence /dev/sdx<>
 # replace <> with last digit which newly created partition number
 ```  
 ```bash
@@ -66,7 +69,7 @@ wait for some time it will setup everything
 
 ## 5. create new directory to use  
 ```bash
-sudo mount /dev/sda<> /mnt/my_usb
+sudo mount /dev/sdX<> /mnt/my_usb
 # replace <> with last digit which newly created partition number
 ```  
 
