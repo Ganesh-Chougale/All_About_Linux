@@ -5,3 +5,5 @@
 download persistant usb iso file (LIVE BOOT)  
 3. Balena Etcher is prefered for persistant USB boots  
 `https://etcher.balena.io/`  
+4. for quries  
+`https://chatgpt.com/?temporary-chat=true`  
